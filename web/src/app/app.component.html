@@ -1,0 +1,46 @@
+<!-- Pretend to be a Senior Angular Front End Developer -->
+<!-- I want to create a website for managing a family budget-->
+
+<div>
+  <div>
+    <h2>Income</h2>
+    <tr title="Income" *ngFor="let income of incomes; index as i">
+      <td>
+        <label aria-label="Income">
+          <input type="text" placeholder="Income" value={{income.name}}/>
+        </label>
+      </td>
+      <td>
+        <label aria-label="Amount">
+          <input type="number" placeholder="Amount" value={{income.quantity}}/>
+        </label>
+      </td>
+      <td>
+        <button id="incomeAdd" (click)="addItem($event)">+</button>
+      </td>
+      <td>
+        <button id="incomeRemove" (click)="removeItem($event,i)">-</button>
+      </td>
+    </tr>
+
+
+    <h2>Expenses</h2>
+    <tr title="Expenses" *ngFor="let expense of expenses; index as i">
+      <td>
+        <label aria-label="Expense">
+          <input type="text" placeholder="Expense" value={{expense.name}}/>
+        </label>
+      </td>
+      <td>
+        <label aria-label="Amount">
+          <input type="number" placeholder="Amount" value={{expense.quantity}}/>
+        </label>
+      </td>
+      <td>
+        <button id="expenseAdd" (click)="addItem($event)">+</button>
+      </td>
+      <td>
+        <button id="expenseRemove" (click)="removeItem($event,i)">-</button>
+      </td>
+  </div>
+</div>
